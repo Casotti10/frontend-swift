@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - Swift Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Swift</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h2 class="mb-4">🛒 Seu Carrinho</h2>
+    <table class="table table-bordered align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Total</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="lista-carrinho"></tbody>
+    </table>
+    <div class="d-flex justify-content-end">
+      <h4>Total da Compra: <span id="valor-total">R$ 0,00</span></h4>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      <button class="btn btn-success">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <footer class="text-center">
+    <p>© 2025 Swift Online - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const carrinho = [
+      { nome: "Filé de Tilápia", preco: 36.90, quantidade: 2 },
+      { nome: "Filé de Salmão", preco: 49.90, quantidade: 1 }
+    ];
+    function atualizarCarrinho() {
+      const lista = document.getElementById("lista-carrinho");
+      const total = document.getElementById("valor-total");
+      lista.innerHTML = "";
+      let soma = 0;
+      carrinho.forEach((item, index) => {
+        const subtotal = item.preco * item.quantidade;
+        soma += subtotal;
+        lista.innerHTML += `<tr>
+            <td>${item.nome}</td>
+            <td>R$ ${item.preco.toFixed(2)}</td>
+            <td><input type="number" min="1" value="${item.quantidade}" 
+                class="form-control w-50 mx-auto" 
+                onchange="atualizarQuantidade(${index}, this.value)"></td>
+            <td>R$ ${subtotal.toFixed(2)}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="remover(${index})">Remover</button></td>
+          </tr>`;
+      });
+      total.innerText = "R$ " + soma.toFixed(2);
+    }
+    function atualizarQuantidade(index, novaQtd) {
+      carrinho[index].quantidade = parseInt(novaQtd);
+      atualizarCarrinho();
+    }
+    function remover(index) {
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+    atualizarCarrinho();
+  </script>
+</body>
+</html>

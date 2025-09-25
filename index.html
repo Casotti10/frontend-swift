@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <a class="navbar-brand" href="#">Swift</a>
+    <div>
+      <a class="nav-link" href="index.html">Produtos</a>
+      <a class="nav-link" href="carrinho.html">Carrinho</a>
+      <a class="nav-link" href="contato.html">Contato</a>
+      <a class="nav-link" href="login.html">Login</a>
+      <a class="nav-link btn-cadastro" href="cadastro.html">Cadastrar-se</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Produtos para o seu churrasco!</h1>
+  </div>
+
+  <!-- Produtos -->
+  <div class="container my-4">
+    <h2 class="mb-4">Nossos Produtos</h2>
+    <div class="row" id="produtos">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img src="img/tilapia.jpg" class="card-img-top" alt="Tilápia">
+          <div class="card-body text-center">
+            <h6>Filé de Tilápia</h6>
+            <p>R$ 36,90</p>
+            <button class="btn btn-primary btn-sm add">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img src="img/salmao.jpg" class="card-img-top" alt="Salmão">
+          <div class="card-body text-center">
+            <h6>Filé de Salmão</h6>
+            <p>R$ 49,90</p>
+            <button class="btn btn-primary btn-sm add">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <img src="img/frango.jpg" class="card-img-top" alt="Frango">
+          <div class="card-body text-center">
+            <h6>Peito de Frango</h6>
+            <p>R$ 21,00</p>
+            <button class="btn btn-primary btn-sm add">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="text-center">
+    <p>© 2025 Swift Online - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
