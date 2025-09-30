@@ -1,0 +1,357 @@
+/* ============================
+   Estilos Globais
+============================ */
+body {
+  background-color: #ffffff; /* Fundo branco global */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   Tela de Login/Cadastro
+============================ */
+.login-body {
+  background: linear-gradient(135deg, #ff4d00, #ff4d00);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-title {
+  color: #ff4d00;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.login-form input {
+  padding: 14px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.login-form input::placeholder {
+  color: #999;
+}
+
+.login-form input:focus {
+  border-color: #ff4d00;
+  box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.2);
+  background-color: #fff;
+  outline: none;
+}
+
+.login-form label {
+  text-align: left;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Botões */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff4d00;
+  border-color: #ff4d00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(255, 128, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #e04400; /* versão mais escura */
+  border-color: #e04400;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 128, 0, 0.4);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 14px;
+  background-color: #fff;
+  color: #ff4d00;
+  border: 1px solid #ff4d00;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: #fff5ee;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-text {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.login-text a {
+  color: #ff4d00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* ======*
+/* ============================
+   Estilos Globais
+============================ */
+body {
+  background-color: #f9f9f9; /* Pode ser removido se o login-body já definir */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   Tela de Login/Cadastro (Manter fundo laranja e caixa branca)
+============================ */
+.login-body {
+  background: linear-gradient(135deg, #ff4d00, #ff4d00); /* Seu fundo laranja original */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.login-container {
+  background: #fff; /* Sua caixa branca original */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 100%;
+  max-width: 450px; /* Aumentado para acomodar 2 campos */
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-title {
+  color: #ff4d00; /* Cor do título para combinar com o laranja */
+  margin-bottom: 1.5rem;
+  font-size: 2rem; /* Tamanho maior para o título */
+  font-weight: 700;
+}
+
+.login-subtitle {
+  color: #555; /* Subtítulo para descrição */
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.login-form input {
+ padding: 14px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  
+  /* AQUI VOCÊ CONTROLA A DISTÂNCIA ENTRE OS CAMPOS */
+  margin-bottom: 20px;
+}
+
+.login-form input::placeholder {
+  color: #999;
+}
+
+.login-form input:focus {
+  border-color: #ff4d00;
+  box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.2); /* Sombra de foco mais sutil */
+  background-color: #fff; /* Fundo branco no foco */
+  outline: none;
+}
+
+/* Botões */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff4d00;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Bordas arredondadas */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(255, 128, 0, 0.3); /* Sombra para o botão primário */
+}
+
+.btn-primary:hover {
+  background-color: #ff4d00;
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+  box-shadow: 0 6px 15px rgba(255, 128, 0, 0.4);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 14px;
+  background-color: #fff; /* Fundo branco para o secundário */
+  color: #ff4d00; /* Texto laranja */
+  border: 1px solid #ff4d00; /* Borda laranja */
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: #fff5ee; /* Fundo laranja clarinho no hover */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-text {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.login-text a {
+  color: #ff4d00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos da navbar e footer (se ainda existirem no seu CSS) */
+.navbar {
+  background-color: #ff4d00;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+}
+
+/* Outras classes globais, como .banner e .card (se houver), devem ser mantidas se você as usa em outras páginas */
+.banner {
+  background: url("../img/banner.jpg") no-repeat center;
+  background-size: cover;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.card img {
+  height: 150px;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+} 
+
+.login-form label {
+  text-align: left;
+  display: block;
+  margin-bottom: 0.px; /* Ajuste para ficar bem próximo do campo */
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 600;
+}
