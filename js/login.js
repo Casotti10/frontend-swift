@@ -1,19 +1,32 @@
-const loginForm = document.getElementById('login-form');
+const form = document.getElementById('login-form');
+const erro = document.getElementById('login-error');
 
-loginForm.addEventListener('submit', function(e) {
-  e.preventDefault();
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-  const email = document.getElementById('email-login').value.trim();
-  const senha = document.getElementById('senha-login').value.trim();
+        const emailInput = document.getElementById('email-login').value.trim();
+        const senhaInput = document.getElementById('senha-login').value.trim();
 
-  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-  const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+        if (!emailInput || !senhaInput) {
+            erro.textContent = 'Por favor, preencha todos os campos.';
+            return;
+        }
 
-  if (usuario) {
-    alert('Login realizado com sucesso! Bem-vindo, ' + usuario.nome);
-    // Aqui você pode redirecionar para a página principal
-    window.location.href = 'index.html';
-  } else {
-    alert('Usuário ou senha inválidos!');
-  }
-});
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+        const usuarioValidado = usuarios.find(u => 
+            u.email.trim().toLowerCase() === emailInput.toLowerCase() && 
+            u.senha.trim() === senhaInput
+        );
+
+        if (usuarioValidado) {
+            localStorage.setItem('usuarioLogado', JSON.stringify(usuarioValidado));
+            window.location.href = 'index.html';
+        } else {
+            erro.textContent = 'E-mail ou senha inválidos. Tente novamente.';
+        }
+    });
+} else {
+    console.error('Formulário de login com ID "login-form" não encontrado.');
+}

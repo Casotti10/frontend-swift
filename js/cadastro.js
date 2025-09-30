@@ -1,26 +1,36 @@
-const form = document.getElementById('cadastro-form');
+const formCadastro = document.getElementById('cadastro-form');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+// Cria elemento para exibir mensagens de erro
+let erroCadastro = document.createElement('p');
+erroCadastro.id = 'cadastro-erro';
+erroCadastro.style.color = 'red';
+formCadastro.parentNode.insertBefore(erroCadastro, formCadastro.nextSibling);
 
-  const nome = document.getElementById('nome').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const senha = document.getElementById('senha').value.trim();
+formCadastro.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Pega lista de usuários do LocalStorage ou cria nova
-  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value.trim();
 
-  // Verifica se email já existe
-  const usuarioExistente = usuarios.find(u => u.email === email);
-  if (usuarioExistente) {
-    alert('Este e-mail já está cadastrado!');
-    return;
-  }
+    if (!nome || !email || !senha) {
+        erroCadastro.textContent = 'Preencha todos os campos.';
+        return;
+    }
 
-  // Adiciona novo usuário
-  usuarios.push({ nome, email, senha });
-  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-  alert('Cadastro realizado com sucesso!');
-  window.location.href = 'login.html'; // Redireciona para login
+    // Verifica se o e-mail já está cadastrado
+    const emailExiste = usuarios.some(u => u.email.toLowerCase() === email.toLowerCase());
+    if (emailExiste) {
+        erroCadastro.textContent = 'Este e-mail já está cadastrado.';
+        return;
+    }
+
+    // Salva o novo usuário no LocalStorage
+    usuarios.push({ nome, email, senha });
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    alert('Cadastro realizado com sucesso!');
+    window.location.href = 'login.html';
 });

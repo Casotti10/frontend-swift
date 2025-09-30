@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastrar-se - Swift</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar-se - Swift</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="login-body">
 
-  <div class="login-container">
-    <h2 class="login-title">Criar Conta</h2>
-    <p class="login-subtitle">Preencha seus dados para começar as suas compras!</p> <form class="login-form">
-      <div class="input-group">
-        <input type="text" id="nome" placeholder="Nome completo" required>
-        <input type="email" id="email" placeholder="E-mail" required>
-      </div>
-      <input type="password" id="senha" placeholder="Senha" required>
-      
-      <button type="submit" class="btn-primary">CADASTRAR</button>
-      
-    
-    <p class="login-text">
-      Já tem uma conta? <a href="login.html">Faça login</a>
-    </p>
-  </div>
+    <div class="login-container">
+        <h2 class="login-title">Criar Conta</h2>
+        <p class="login-subtitle">Preencha seus dados para começar as suas compras!</p>
+        <!-- Adicionamos o ID ao formulário -->
+        <form id="cadastro-form" class="login-form">
+            <!-- IDs dos inputs: nome, email, senha -->
+            <input type="text" id="nome" placeholder="Nome completo" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button type="submit" class="btn-primary">CADASTRAR</button>
+        </form>
+        
+        <p class="login-text">
+            Já tem uma conta? <a href="login.html">Faça login</a>
+        </p>
+    </div>
 
-  <script src="js/cadastro.js"></script>
+    <!-- Script de cadastro -->
+    <script src="js/cadastro.js"></script>
 </body>
 </html>
