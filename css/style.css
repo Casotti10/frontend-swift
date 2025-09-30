@@ -1,5 +1,5 @@
 /* ============================
-   Estilos Globais
+  Estilos Globais
 ============================ */
 body {
   background-color: #ffffff; /* Fundo branco global */
@@ -9,7 +9,7 @@ body {
 }
 
 /* ============================
-   Tela de Login/Cadastro
+  Tela de Login/Cadastro
 ============================ */
 .login-body {
   background: linear-gradient(135deg, #ff4d00, #ff4d00);
@@ -161,7 +161,7 @@ body {
 
 /* ======*
 /* ============================
-   Estilos Globais
+  Estilos Globais
 ============================ */
 body {
   background-color: #f9f9f9; /* Pode ser removido se o login-body já definir */
@@ -171,7 +171,7 @@ body {
 }
 
 /* ============================
-   Tela de Login/Cadastro (Manter fundo laranja e caixa branca)
+  Tela de Login/Cadastro (Manter fundo laranja e caixa branca)
 ============================ */
 .login-body {
   background: linear-gradient(135deg, #ff4d00, #ff4d00); /* Seu fundo laranja original */
@@ -231,7 +231,7 @@ body {
 }
 
 .login-form input {
- padding: 14px;
+  padding: 14px;
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid #ddd;
@@ -329,10 +329,18 @@ body {
   background-size: cover;
   height: 250px;
   display: flex;
-  align-items: center;
+  padding-top: 15px;
   justify-content: center;
   color: #fff;
   text-shadow: 1px 1px 4px #000;
+}
+
+.banner h1 {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    position: relative;
+    top: -40px; /* sobe o título */
 }
 
 .card img {
