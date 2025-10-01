@@ -10,14 +10,15 @@
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Swift</a>
+      <a class="navbar-brand fw-bold" href="home.html">Swift</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="home.html">Produtos</a></li>
           <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastre-se</a></li>
           <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
         </ul>
       </div>
@@ -62,7 +63,7 @@
       const total = document.getElementById("valor-total");
       lista.innerHTML = "";
       let soma = 0;
-      carrinho.forEach((item, index) => {
+      carrinho.forEach((item, home) => {
         const subtotal = item.preco * item.quantidade;
         soma += subtotal;
         lista.innerHTML += `<tr>
@@ -70,19 +71,19 @@
             <td>R$ ${item.preco.toFixed(2)}</td>
             <td><input type="number" min="1" value="${item.quantidade}" 
                 class="form-control w-50 mx-auto" 
-                onchange="atualizarQuantidade(${index}, this.value)"></td>
+                onchange="atualizarQuantidade(${home}, this.value)"></td>
             <td>R$ ${subtotal.toFixed(2)}</td>
-            <td><button class="btn btn-danger btn-sm" onclick="remover(${index})">Remover</button></td>
+            <td><button class="btn btn-danger btn-sm" onclick="remover(${home})">Remover</button></td>
           </tr>`;
       });
       total.innerText = "R$ " + soma.toFixed(2);
     }
-    function atualizarQuantidade(index, novaQtd) {
-      carrinho[index].quantidade = parseInt(novaQtd);
+    function atualizarQuantidade(home, novaQtd) {
+      carrinho[home].quantidade = parseInt(novaQtd);
       atualizarCarrinho();
     }
-    function remover(index) {
-      carrinho.splice(index, 1);
+    function remover(home) {
+      carrinho.splice(home, 1);
       atualizarCarrinho();
     }
     atualizarCarrinho();

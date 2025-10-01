@@ -340,11 +340,11 @@ body {
     width: 100%;
     font-weight: bold;
     position: relative;
-    top: -40px; /* sobe o título */
+    top: -50px; /* sobe o título */
 }
 
 .card img {
-  height: 150px;
+  height: 500px;
   object-fit: cover;
 }
 
