@@ -1,12 +1,19 @@
 // Alerta e adiciona produto no carrinho
-const botoes = document.querySelectorAll(".add");
+const botoesAdicionar = document.querySelectorAll(".add");
 
-botoes.forEach(btn => {
+botoesAdicionar.forEach(btn => {
     btn.addEventListener("click", () => {
-        const produto = btn.getAttribute("data-produto"); // pega nome do produto do botão
-        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        const nomeProduto = btn.getAttribute("data-nome");
+        const precoProduto = parseFloat(btn.getAttribute("data-preco"));
 
-        carrinho.push(produto);
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        const itemExistente = carrinho.find(item => item.nome === nomeProduto);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+        } else {
+            carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: 1 });
+        }
 
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
