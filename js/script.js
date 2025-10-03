@@ -1,6 +1,4 @@
-// Alerta e adiciona produto no carrinho
 const botoesAdicionar = document.querySelectorAll(".add");
-
 botoesAdicionar.forEach(btn => {
     btn.addEventListener("click", () => {
         const nomeProduto = btn.getAttribute("data-nome");
@@ -16,12 +14,10 @@ botoesAdicionar.forEach(btn => {
         }
 
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
         alert("Produto adicionado ao carrinho!");
     });
 });
 
-// Script do formulário de contato
 const formContato = document.getElementById("formContato");
 if (formContato) {
     formContato.addEventListener("submit", function(e) {

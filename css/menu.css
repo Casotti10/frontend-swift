@@ -5,12 +5,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* fundo laranja da navbar */
 .bg-orange {
     background-color: orangered !important;
 }
-
-
 
 .sidebar {
     position: fixed;
@@ -62,13 +59,13 @@
 }
 
 #menuBtn {
-    background: none;    
-    border: none;          
-    color: white;         
-    font-size: clamp(1.5em, 2vh, 10em);    
+    background: none;
+    border: none;
+    color: white;
+    font-size: clamp(1.5em, 2vh, 10em);
     cursor: pointer;
 }
 
-#menuBtn:hover{
+#menuBtn:hover {
     color: #ffb18de1;
 }

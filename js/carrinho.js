@@ -55,6 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarCarrinho();
     };
 
+    const botaoFinalizar = document.querySelector(".btn-success");
+
+    if (botaoFinalizar) {
+        botaoFinalizar.addEventListener("click", () => {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.");
+            } else {
+                alert("Compra finalizada com sucesso! Agradecemos a sua preferência.");
+                localStorage.removeItem("carrinho");
+                atualizarCarrinho();
+            }
+        });
+    }
+
     listaCarrinho.addEventListener("click", (e) => {
         if (e.target.classList.contains("btn-danger")) {
             const index = e.target.dataset.index;
